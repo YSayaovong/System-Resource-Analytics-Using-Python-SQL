@@ -1,53 +1,18 @@
-# System Resource Analytics Using Python & SQL
+# System Resource Analytics with Python and SQLite
+## Scope
+Academic-style portfolio exercise importing process metrics from Excel into SQLite and querying CPU, memory and process-type summaries. This demonstrates basic data loading, SQL grouping/filtering and Excel export; it is not a production operating-system monitoring service.
 
-📁 **Course:** ASU IFT 103 – Operating System Architecture  
-🧑‍💻 **Built by:** Yengkong Sayaovong  
-📅 **Term:** Spring 2022  
-📍 **Tools Used:** Python, pandas, SQLite, Excel, Jupyter Notebook (Anaconda)
+## Files
+- `ASU_IFT103_OS_Resource_Monitor.xlsx`: input workbook.
+- `IFT103_SQL_Resource_Analytics.ipynb`: executable notebook.
+- `os_metrics.db`: saved SQLite database.
+- `High_CPU_Processes.xlsx`: saved filtered output.
 
----
+## Notebook behavior
+Loads the workbook with pandas, replaces the `process_metrics` table, queries the five processes with highest average CPU, average memory by date, process counts by type and records above 30% CPU. It exports those high-CPU rows to Excel.
 
-## 📘 Project Summary
+## Run
+Install pandas, openpyxl and Jupyter. Open the notebook, replace its two personal Windows paths with paths on your machine, then run cells in order. The SQLite module is included in Python. Work in a copy: loading replaces the existing table.
 
-This academic project simulates a lightweight Operating System analytics pipeline.  
-I used Python to load system process metrics from Excel, stored the data in a local SQLite database, and performed diagnostic queries to identify high CPU/memory usage patterns. Results were exported back to Excel for business-friendly reporting.
-
----
-
-## 📊 Key Features
-
-- ✅ Imported real-looking OS process data using `pandas`
-- ✅ Created a relational database using `sqlite3`
-- ✅ Queried and analyzed average CPU and memory usage
-- ✅ Identified high-CPU usage processes (>30%)
-- ✅ Exported filtered results to Excel for reporting
-
----
-
-## 🧠 SQL Queries Performed
-
-1. **Top 5 processes by average CPU usage**
-2. **Average memory usage by date**
-3. **Process count by type (System/User/Dev)**
-4. **Outlier detection: processes with CPU > 30%**
-
----
-
-## 🗂️ Files Included
-
-| File Name                        | Purpose                                  |
-|----------------------------------|------------------------------------------|
-| `ASU_IFT103_OS_Resource_Monitor.xlsx` | Input process dataset                    |
-| `IFT103_SQL_Resource_Analytics.ipynb` | Python notebook with ETL + SQL queries  |
-| `os_metrics.db`                  | SQLite database                          |
-| `High_CPU_Processes.xlsx`        | Exported high-CPU process report         |
-
----
-
-## 🚀 Skills Demonstrated
-
-- ETL pipelines using Python
-- SQL query writing and optimization
-- Database creation and analysis
-- Excel automation for reporting
-- Data wrangling and filtering
+## Limitations
+Input provenance, data validity and notebook output freshness require review. The 30% threshold is a fixed example, not a validated anomaly model. SQL query optimization, live collection and measured operational improvements are not demonstrated.
