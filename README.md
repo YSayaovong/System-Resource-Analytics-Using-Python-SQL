@@ -17,11 +17,5 @@ Install pandas, openpyxl and Jupyter. Start Jupyter in this repository directory
 ## Limitations
 Input provenance and data validity require review. The notebook includes saved text outputs; the committed database and exported workbook are snapshots. Rerun to validate freshness. The 30% threshold is a fixed example, not a validated anomaly model. SQL query optimization, live collection and measured operational improvements are not demonstrated.
 
-## Validation of the portable notebook
-All code cells were executed against the included workbook after replacing machine-specific paths. The input contains 150 records and the CPU > 30% export contains 24 records. The exported row count and CPU threshold were checked. The notebook now retains text outputs from a sequential execution of the included input. Rerun it to verify your copy.
-
-Path portability and documentation updates were developed with AI assistance. This is portfolio SQL/Python practice, not a claim of workplace programming experience.
-
-
 ## Repeatable execution
 Run `python execute_notebook.py` from this repository directory after installing pandas and openpyxl. It executes reviewed code cells in sequence, saves bounded text results and checks database/export counts and the CPU threshold. It runs code with normal Python permissions; use it only on trusted notebooks. An interactive Jupyter server is optional. This runner is used by the included CI definition.
